@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'python3 app.py &'
-        sh 'sleep 1200'
+        sh 'sleep 500'
       }   
     }
   }
