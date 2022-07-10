@@ -16,6 +16,11 @@ pipeline {
         sh 'python3 app.py &'
         sh 'sleep 500'
       }   
+      post {
+        always {
+          junit 'test-reports/*.xml'
+        }
+      }
     }
   }
 }

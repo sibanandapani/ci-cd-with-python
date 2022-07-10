@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# https://joachim8675309.medium.com/jenkins-ci-pipeline-with-python-8bf1a0234ec3
 import unittest
 import app
 
@@ -25,4 +26,7 @@ class TestHello(unittest.TestCase):
         self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
 
 if __name__ == '__main__':
+    import xmlrunner
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
     unittest.main()
